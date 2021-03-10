@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "352922802000",
+    "project_id": "dating-app-c01fd",
+    "storage_bucket": "dating-app-c01fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352922802000:android:c3a4c6e91d90f1393a7e55",
+        "android_client_info": {
+          "package_name": "pl.mjajkowicz.dating_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352922802000-fp6jhttv1vr75ravupdh7tmi64hlpjim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxAPTlgODynN7syQGNhMJGZMxEP9m5-dU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352922802000-fp6jhttv1vr75ravupdh7tmi64hlpjim.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
