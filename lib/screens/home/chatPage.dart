@@ -69,7 +69,7 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 actions: <Widget>[
-                  FlatButton.icon(
+                  TextButton.icon(
                     icon: Icon(Icons.mood),
                     label: Text('Yes!'),
                     onPressed: () async {
@@ -78,7 +78,7 @@ class _ChatPageState extends State<ChatPage> {
                       Navigator.of(context).pop();
                     },
                   ),
-                  FlatButton.icon(
+                  TextButton.icon(
                     icon: Icon(Icons.mood_bad),
                     label: Text('No'),
                     onPressed: () async {

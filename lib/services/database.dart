@@ -29,16 +29,16 @@ class DatabaseService {
 
     final List<UserData> documents = result.docs.map((doc){
           return UserData(
-            uid: doc.data()['uid'],
-            age: doc.data()['age'],
-            height: doc.data()['height'],
-            gender: doc.data()['gender'],
-            hairColor: doc.data()['hairColor'],
-            hairLength: doc.data()['hairLength'],
-            position: doc.data()['position'],
-            avatarUrl: doc.data()['avatarUrl'],
-            interests: doc.data()['interests'],
-            politics: doc.data()['politics'],
+            uid: doc.get('uid'),
+            age: doc.get('age'),
+            height: doc.get('height'),
+            gender: doc.get('gender'),
+            hairColor: doc.get('hairColor'),
+            hairLength: doc.get('hairLength'),
+            position: doc.get('position'),
+            avatarUrl: doc.get('avatarUrl'),
+            interests: doc.get('interests'),
+            politics: doc.get('politics'),
           );
         }).toList();
 
@@ -119,10 +119,10 @@ class DatabaseService {
 
     final List<UserData> documents = result.docs.map((doc){
       return UserData(
-        uid: doc.data()['uid'],
-        age: doc.data()['age'],
-        gender: doc.data()['gender'],
-        position: doc.data()['position'],
+        uid: doc.get('uid'),
+        age: doc.get('age'),
+        gender: doc.get('gender'),
+        position: doc.get('position'),
       );
     }).toList();
 
@@ -276,45 +276,45 @@ class DatabaseService {
   UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
     return UserData(
       uid: uid,
-      isNewUser: snapshot.data()['isNewUser'],
-      lid: snapshot.data()['lid'],
-      name: snapshot.data()['name'],
-      gender: snapshot.data()['gender'],
-      age: snapshot.data()['age'],
-      height: snapshot.data()['height'],
-      wantToBePaired: snapshot.data()['wantToBePaired'],
-      wantToBePairedRandomly: snapshot.data()['wantToBePairedRandomly'],
-      avatarUrl: snapshot.data()['avatarUrl'],
-      hairLength: snapshot.data()['hairLength'],
-      hairColor: snapshot.data()['hairColor'],
-      cigarettes: snapshot.data()['cigarettes'],
-      alcohol: snapshot.data()['alcohol'],
-      interests: snapshot.data()['interests'],
-      position: snapshot.data()['position'],
-      pairedDate: snapshot.data()['pairedDate'],
-      isPositionUpdated: snapshot.data()['isPositionUpdated'],
-      isUserProfileUpdated: snapshot.data()['isUserProfileUpdated'],
-      isLoverProfileUpdated: snapshot.data()['isLoverProfileUpdated'],
-      politics: snapshot.data()['politics'],
+      isNewUser: snapshot.get('isNewUser'),
+      lid: snapshot.get('lid'),
+      name: snapshot.get('name'),
+      gender: snapshot.get('gender'),
+      age: snapshot.get('age'),
+      height: snapshot.get('height'),
+      wantToBePaired: snapshot.get('wantToBePaired'),
+      wantToBePairedRandomly: snapshot.get('wantToBePairedRandomly'),
+      avatarUrl: snapshot.get('avatarUrl'),
+      hairLength: snapshot.get('hairLength'),
+      hairColor: snapshot.get('hairColor'),
+      cigarettes: snapshot.get('cigarettes'),
+      alcohol: snapshot.get('alcohol'),
+      interests: snapshot.get('interests'),
+      position: snapshot.get('position'),
+      pairedDate: snapshot.get('pairedDate'),
+      isPositionUpdated: snapshot.get('isPositionUpdated'),
+      isUserProfileUpdated: snapshot.get('isUserProfileUpdated'),
+      isLoverProfileUpdated: snapshot.get('isLoverProfileUpdated'),
+      politics: snapshot.get('politics'),
     );
   }
 
   LoverData _loverDataFromSnapshot(DocumentSnapshot snapshot) {
     return LoverData(
         uid: uid,
-        gender: snapshot.data()['gender'],
-        ageMin: snapshot.data()['ageMin'],
-        ageMax: snapshot.data()['ageMax'],
-        heightMin: snapshot.data()['heightMin'],
-        heightMax: snapshot.data()['heightMax'],
-        hairColor: snapshot.data()['hairColor'],
-        hairLength: snapshot.data()['hairLength'],
-        cigarettes: snapshot.data()['cigarettes'],
-        alcohol: snapshot.data()['alcohol'],
-        distance: snapshot.data()['distance'],
-        interests: snapshot.data()['interests'],
-        haveAvatar: snapshot.data()['haveAvatar'],
-        politics: snapshot.data()['politics'],
+        gender: snapshot.get('gender')['gender'],
+        ageMin: snapshot.get('ageMin')['ageMin'],
+        ageMax: snapshot.get('ageMax')['ageMax'],
+        heightMin: snapshot.get('heightMin')['heightMin'],
+        heightMax: snapshot.get('heightMax')['heightMax'],
+        hairColor: snapshot.get('hairColor')['hairColor'],
+        hairLength: snapshot.get('hairLength')['hairLength'],
+        cigarettes: snapshot.get('cigarettes')['cigarettes'],
+        alcohol: snapshot.get('alcohol')['alcohol'],
+        distance: snapshot.get('distance')['distance'],
+        interests: snapshot.get('interests')['interests'],
+        haveAvatar: snapshot.get('haveAvatar')['haveAvatar'],
+        politics: snapshot.get('politics')['politics'],
     );
   }
 

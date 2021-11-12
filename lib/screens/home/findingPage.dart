@@ -39,7 +39,7 @@ class _FindingPageState extends State<FindingPage> {
               ),
             ),
             actions: <Widget>[
-              FlatButton.icon(
+              TextButton.icon(
                 icon: Icon(Icons.mood_bad),
                 label: Text('Ok'),
                 onPressed: () {
@@ -67,7 +67,7 @@ class _FindingPageState extends State<FindingPage> {
               ),
             ),
             actions: <Widget>[
-              FlatButton.icon(
+              TextButton.icon(
                 icon: Icon(Icons.check),
                 label: Text('Ok!'),
                 onPressed: () {
@@ -97,7 +97,7 @@ class _FindingPageState extends State<FindingPage> {
                       elevation: 0.0,
                       toolbarHeight: 60.0,
                       actions: <Widget>[
-                        FlatButton.icon(
+                        TextButton.icon(
                           icon: Icon(Icons.help),
                           label: Text(''),
                           onPressed: () async {
@@ -122,8 +122,10 @@ class _FindingPageState extends State<FindingPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              RaisedButton(
-                                color: Colors.red[400],
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red[400])
+                                ),
                                 child: Text('Find me a pair'),
                                 onPressed: isDisable ? null : () async {
                                   String result = await DatabaseService(uid: user.uid).findPair(loverData.gender, loverData.ageMin, loverData.ageMax, loverData.heightMin,
@@ -137,8 +139,10 @@ class _FindingPageState extends State<FindingPage> {
                                   }
                                 },
                               ),
-                              RaisedButton(
-                                color: Colors.red[400],
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red[400])
+                                ),
                                 child: Text('Find me a pair randomly'),
                                 onPressed: isDisable ? null : () async {
                                   String result = await DatabaseService(uid: user.uid).findPairRandomly(loverData.gender, loverData.ageMin, loverData.ageMax, loverData.distance, args.position );

@@ -36,7 +36,7 @@ class _RegisterState extends State<Register> {
               toolbarHeight: 60.0,
               title: Text('Sign up to LoveLee'),
               actions: <Widget>[
-                FlatButton.icon(
+                TextButton.icon(
                   icon: Icon(Icons.person),
                   label: Text('Sign In'),
                   onPressed: () => widget.toggleView(),
@@ -114,8 +114,9 @@ class _RegisterState extends State<Register> {
                           },
                         ),
                         SizedBox(height: 20.0),
-                        RaisedButton(
-                          color: Colors.red[400],
+                        ElevatedButton(
+                          style: ButtonStyle(foregroundColor: MaterialStateProperty.all<Color>(Colors.red[400])),
+                          // color: Colors.red[400],
                           child: Text(
                             'Register',
                             style: TextStyle(color: Colors.white),

@@ -53,7 +53,7 @@ class _UserProfileSettingsState extends State<UserProfileSettings> {
     GeoPoint position;
 
     Future<void> _pickImage(ImageSource source) async{
-      File selected = File(await ImagePicker().getImage(source: source, imageQuality: 50).then((pickedFile) => pickedFile.path));
+      File selected = File(await ImagePicker().pickImage(source: source, imageQuality: 50).then((pickedFile) => pickedFile.path));
 
       setState(() {
         _imageFile = selected;
@@ -214,18 +214,20 @@ class _UserProfileSettingsState extends State<UserProfileSettings> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       SizedBox(width: 20.0),
-                                      RaisedButton(
-                                          elevation: 0.0,
-                                          color: Colors.red[400],
-                                          child: Text(
-                                            'Update your location',
-                                            style: TextStyle(color: Colors.white),
-                                          ),
-                                          onPressed: () async {
-                                            var position = await getCurrentLocation();
-                                            _currentPosition =  position;
-                                            updated = true;
-                                          }
+                                      ElevatedButton(
+                                        style: ButtonStyle(
+                                          foregroundColor: MaterialStateProperty.all<Color>(Colors.red[400]),
+                                          elevation: MaterialStateProperty.all(0.0),
+                                        ),
+                                        child: Text(
+                                          'Update your location',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        onPressed: () async {
+                                          var position = await getCurrentLocation();
+                                          _currentPosition =  position;
+                                          updated = true;
+                                        }
                                       ),
                                       if(updated)
                                         Icon(Icons.check_circle, color: Colors.red[400],),
@@ -342,16 +344,18 @@ class _UserProfileSettingsState extends State<UserProfileSettings> {
                                       ],
                                   ),
                                   SizedBox(height: 20.0),
-                                  RaisedButton(
-                                      elevation: 0.0,
-                                      color: Colors.red[400],
-                                      child: Text(
-                                        'Update your interests',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      onPressed: () async {
-                                        _showSettingsPanel(userData.interests);
-                                      }
+                                  ElevatedButton(
+                                    style: ButtonStyle(
+                                      foregroundColor: MaterialStateProperty.all<Color>(Colors.red[400]),
+                                      elevation: MaterialStateProperty.all(0.0),
+                                    ),
+                                    child: Text(
+                                      'Update your interests',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    onPressed: () async {
+                                      _showSettingsPanel(userData.interests);
+                                    }
                                   ),
                                   SizedBox(height: 20.0),
                                   Container(
@@ -561,9 +565,11 @@ class _UserProfileSettingsState extends State<UserProfileSettings> {
                                     ),
                                   ),
                                   SizedBox(height: 20.0),
-                                  RaisedButton(
-                                    elevation: 0.0,
-                                    color: Colors.red[400],
+                                  ElevatedButton(
+                                    style: ButtonStyle(
+                                      foregroundColor: MaterialStateProperty.all<Color>(Colors.red[400]),
+                                      elevation: MaterialStateProperty.all(0.0),
+                                    ),
                                     child: Text(
                                       'Update',
                                       style: TextStyle(color: Colors.white),

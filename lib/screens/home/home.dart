@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
               ),
             ),
             actions: <Widget>[
-              FlatButton.icon(
+              TextButton.icon(
                 icon: Icon(Icons.mood_bad),
                 label: Text('Ok'),
                 onPressed: () {
@@ -61,7 +61,7 @@ class Home extends StatelessWidget {
                     backgroundColor: Colors.red[400],
                     elevation: 0.0,
                     actions: <Widget>[
-                      FlatButton.icon(
+                      TextButton.icon(
                         icon: Icon(Icons.exit_to_app),
                         label: Text('Logout'),
                         onPressed: () async {

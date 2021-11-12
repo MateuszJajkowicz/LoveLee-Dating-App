@@ -36,7 +36,10 @@ class _SignInState extends State<SignIn> {
               toolbarHeight: 60.0,
               title: Text('Sign in to LoveLee'),
               actions: <Widget>[
-                FlatButton.icon(
+                TextButton.icon(
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(Colors.white)
+                  ),
                   icon: Icon(Icons.person),
                   label: Text('Register'),
                   onPressed: () => widget.toggleView(),
@@ -114,8 +117,10 @@ class _SignInState extends State<SignIn> {
                           },
                         ),
                         SizedBox(height: 20.0),
-                        RaisedButton(
-                            color: Colors.red[400],
+                        ElevatedButton(
+                            style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.red[400]),
+                            ),
                             child: Text(
                               'Sign In',
                               style: TextStyle(color: Colors.white),
@@ -140,7 +145,10 @@ class _SignInState extends State<SignIn> {
                           style: TextStyle(color: Colors.red, fontSize: 14.0),
                         ),
                         SizedBox(height: 20.0),
-                        RaisedButton(
+                        ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(Colors.red[400]),
+                          ),
                           child: Text(
                               'Sign In with Google'
                           ),

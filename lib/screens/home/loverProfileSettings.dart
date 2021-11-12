@@ -148,9 +148,11 @@ class _LoverProfileSettingsState extends State<LoverProfileSettings> {
                                     ),
                                   ),
                                   SizedBox(height: 20.0),
-                                  RaisedButton(
-                                      elevation: 0.0,
-                                      color: Colors.red[400],
+                                  ElevatedButton(
+                                      style: ButtonStyle(
+                                        foregroundColor: MaterialStateProperty.all<Color>(Colors.red[400]),
+                                        elevation: MaterialStateProperty.all(0.0),
+                                      ),
                                       child: Text(
                                         'Update lover interests',
                                         style: TextStyle(color: Colors.white),
@@ -387,8 +389,10 @@ class _LoverProfileSettingsState extends State<LoverProfileSettings> {
                                     ),
                                   ),
                                   SizedBox(height: 20.0),
-                                  RaisedButton(
-                                      color: Colors.red[400],
+                                  ElevatedButton(
+                                      style: ButtonStyle(
+                                        foregroundColor: MaterialStateProperty.all<Color>(Colors.red[400]),
+                                      ),
                                       child: Text(
                                         'Update',
                                         style: TextStyle(color: Colors.white),
